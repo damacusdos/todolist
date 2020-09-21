@@ -1,0 +1,47 @@
+body {
+  font-family: 'Gayathri', sans-serif;
+}
+
+div {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+ul {
+   list-style-type: none;
+   padding-left: 0%;
+}
+
+h1 { 
+  text-align: center; 
+  font-size: 40px;
+}
+
+p {
+  font-size: 28px;
+}
+
+button {
+  font-family: 'Gayathri', sans-serif;
+  align-items: center;
+  border: none;
+  padding-top: 7px;
+  border-radius: 5px;
+  width:80px;
+  height: 30px;
+}
+
+#addBtn {
+  width: 50px;
+}
+
+button:hover {
+   background-color: pink;
+}
+
+#user-input {
+   width: 200px;
+   height: 20px;
+}
+
