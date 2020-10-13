@@ -10,8 +10,7 @@ let input = document.getElementById("user-input");
 let list = [];
 
 
-const btn = {
-addTask: function() {
+function addTask() {
   if(input.value == '') {
     return
   } else {
@@ -29,9 +28,9 @@ addTask: function() {
     taskList.appendChild(item);
     };
   input.value = "";
-},
+}
 
-completeHandler: function() {
+function completeHandler() {
   let selectTask = document.querySelectorAll('li');
   let rm = [];
   for(let i = 0; i < selectTask.length; i++) {
@@ -48,7 +47,7 @@ completeHandler: function() {
   }
 },
 
-deleteHandler: function() {
+function deleteHandler() {
   let deletedTask = document.querySelectorAll('.done');
   for(let i = 0; i < deletedTask.length; i++) {
     let task = deletedTask[i].childNodes[0];
@@ -58,7 +57,7 @@ deleteHandler: function() {
   }
 },
 
-selectAllHandler: function() {
+function selectAllHandler() {
   let deletedTask = document.querySelectorAll('.done');
   let taskAll = 0;
   for(let i = 0; i < deletedTask.length; i++) {
@@ -80,11 +79,9 @@ selectAllHandler: function() {
       }
     }
   }
-}
 
 
-
-addBtn.addEventListener('click', btn.addTask);
-completeBtn.addEventListener('click', btn.completeHandler);
-deleteBtn.addEventListener('click', btn.deleteHandler);
-selectAllBtn.addEventListener('click', btn.selectAllHandler);
+addBtn.addEventListener('click', addTask);
+completeBtn.addEventListener('click', completeHandler);
+deleteBtn.addEventListener('click', deleteHandler);
+selectAllBtn.addEventListener('click', selectAllHandler);
