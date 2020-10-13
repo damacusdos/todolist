@@ -1,12 +1,12 @@
-let addBtn = document.getElementById("addBtn");
-let selectAllBtn = document.getElementById("selectAllBtn");
-let completeBtn = document.getElementById("completeBtn");
-let deleteBtn = document.getElementById("deleteBtn");
+let addBtn = document.getElementById('addBtn');
+let selectAllBtn = document.getElementById('selectAllBtn');
+let completeBtn = document.getElementById('completeBtn');
+let deleteBtn = document.getElementById('deleteBtn');
 
 
 let taskList = document.querySelector('#to-do');
 let doneList = document.querySelector('#done');
-let input = document.getElementById("user-input");
+let input = document.getElementById('user-input');
 let list = [];
 
 
@@ -45,7 +45,7 @@ function completeHandler() {
   while(rm.length) {
     list.splice(rm.pop(),1)
   }
-},
+}
 
 function deleteHandler() {
   let deletedTask = document.querySelectorAll('.done');
@@ -55,7 +55,7 @@ function deleteHandler() {
       doneList.removeChild(deletedTask[i]);
     }
   }
-},
+}
 
 function selectAllHandler() {
   let deletedTask = document.querySelectorAll('.done');
