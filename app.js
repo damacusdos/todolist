@@ -1,50 +1,67 @@
-let addBtn = document.getElementById('addBtn');
-let selectAllBtn = document.getElementById('selectAllBtn');
-let completeBtn = document.getElementById('completeBtn');
-let deleteBtn = document.getElementById('deleteBtn');
+const addTasks = document.querySelector('.add-tasks');
+const selectAllBtn = document.getElementById('selectAllBtn');
+const completeBtn = document.getElementById('completeBtn');
+const deleteBtn = document.getElementById('deleteBtn');
 
 
 let taskList = document.querySelector('#to-do');
 let doneList = document.querySelector('#done');
-let input = document.getElementById('user-input');
-let list = [];
+
+const todoTasks = [];
+const completeTasks = [];
 
 
-function addTask() {
-  if(input.value == '') {
-    return
-  } else {
-    list.push(input.value);
+function addTask(e) {
+  e.preventDefault();
+
+  let text = (this.querySelector('[name=item]')).value;
+  let item = {
+    text,
+    done: false,
   }
-  
-  taskList.innerHTML='';
-   for(let i = 0; i < list.length; i++) {
-    let item = document.createElement('li');
-    let tickBox = document.createElement('input');
-    item.appendChild(tickBox);
-    tickBox.type = 'checkbox';
-    tickBox.name = 'toggled';
-    item.appendChild(document.createTextNode(list[i]));
-    taskList.appendChild(item);
-    };
-  input.value = "";
+  if(text == '') return;
+  todoTasks.push(item);
+  displayItem(todoTasks, taskList);
+  this.reset();
+}
+
+function displayItem(tasks = [], tasksList) {
+  tasksList.innerHTML = tasks.map((task, i) => {
+    return `<li>
+      <input type="checkbox" data-index=${i} id=item${i} ${task.done ? 'checked' : ''}>
+      <label for=item${i}>${task.text}</label>
+    </li>`
+  }).join('');
+}
+
+function toggleHandler(e) {
+
 }
 
 function completeHandler() {
-  let selectTask = document.querySelectorAll('li');
-  let rm = [];
-  for(let i = 0; i < selectTask.length; i++) {
-    let task = selectTask[i].childNodes[0];
-    if(task.checked) {
-      rm.push(i);
-      doneList.appendChild(selectTask[i]);
-      task.checked = false;
-      selectTask[i].setAttribute('class', 'done');
-    }
-  }
-  while(rm.length) {
-    list.splice(rm.pop(),1)
-  }
+  let completeTasks = todoTasks.filter(task => task.done == true);
+  let listUpdate = todoTasks.filter(task => task.done == false);
+  displayItem(completeTasks, doneList);
+  displayItem(listUpdate, taskList);
+  
+  
+
+  // doneList.querySelectorAll('input').forEach( input => input.checked = !input.checked);
+  
+  // let selectTask = document.querySelectorAll('li');
+  // let rm = [];
+  // for(let i = 0; i < selectTask.length; i++) {
+  //   let task = selectTask[i].childNodes[0];
+  //   if(task.checked) {
+  //     rm.push(i);
+  //     doneList.appendChild(selectTask[i]);
+  //     task.checked = false;
+  //     selectTask[i].setAttribute('class', 'done');
+  //   }
+  // }
+  // while(rm.length) {
+  //   list.splice(rm.pop(),1)
+  // }
 }
 
 function deleteHandler() {
@@ -81,7 +98,11 @@ function selectAllHandler() {
   }
 
 
-addBtn.addEventListener('click', addTask);
+addTasks.addEventListener('submit', addTask);
+
+taskList.addEventListener('click', toggleHandler);
+doneList.addEventListener('click', toggleHandler);
+
 completeBtn.addEventListener('click', completeHandler);
 deleteBtn.addEventListener('click', deleteHandler);
 selectAllBtn.addEventListener('click', selectAllHandler);

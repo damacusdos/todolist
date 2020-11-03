@@ -4,39 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Gayathri&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>To-do List</title>
 </head>
 <body>
-  <section>
+  <div class="background-image"></div>
+  <header>
     <h1>Your Tasks</h1>
-  </section>
-  <section>
-  <div>
-      <input type="text" id="user-input">
-      <button id="addBtn">
-      Add
-    </button>
-  </div>
-  <div>
-    <p>To-do's</p>
+  </header>
+  <main class="lists">
+  <form class="add-tasks">
+      <input type="text" class="add-tasks__input input1" name="item" placeholder="Type your task">
+      <input type="submit" class="add-tasks__input input2" value="Add">
+  </form>
+  <div class="to-do">
+    <h2>To-dos</h2>
     <ul id="to-do">
-      <li>Your list is empty!</li>
+      <li>🙌 Your list is empty!</li>
     </ul>
   </div>
-  <div>
-    <button id="completeBtn">Complete</button>
-  </div>
-  <div>
-    <p>Done</p>
-    <ul id="done">
-    </ul>
-  </div>
-  <div>
+  <div class="btn-list">
     <button id="selectAllBtn">Select All</button>
     <button id="deleteBtn">Delete</button>
   </div>
-  </section>
+</main>
   <script src="app.js"></script>
 </body>
 </html>

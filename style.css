@@ -1,11 +1,78 @@
 body {
-  font-family: 'Gayathri', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-div {
+.background-image {
+  background: url('bkimg.jpg') no-repeat;
+  background-size: 100%;
+  filter: blur(2px);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position:fixed;
+  box-sizing: border-box;
+}
+
+.add-tasks {
+  position: relative;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.add-tasks__input  {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+
+.input1 {
+  margin: 0;
+  padding: 0.4rem;
+  border: 1px solid rgba(0,0,0, 0.1);
+  width: 80%;
+  right:0;
+}
+
+.input1:hover {
+  border: 1px solid rgba(0,0,0, 0.5);
+}
+
+.input2 {
+  background-color:rgb(240, 207, 58);
+  box-sizing: border-box;
+  border: 1px solid rgb(240, 207, 58);
+  margin:0;
+  width: 19%;
+  padding: 0.4rem;
+  left:0;
+}
+
+.input2:hover {
+  border: 1px solid rgba(0,0,0, 0.3);
+}
+
+
+.lists {
+  position: relative;
+  min-height: 50vh;
+  min-width:450px;
+  width: 35vw;
   margin: auto;
-  width: 50%;
+  padding: 3%;
   text-align: center;
+  align-content: center;
+  background-color: white;
+  box-shadow:0 0 0 10px rgba(0,0,0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.to-do {
+  flex: 1;
 }
 
 ul {
@@ -13,35 +80,34 @@ ul {
    padding-left: 0%;
 }
 
-h1 { 
-  text-align: center; 
-  font-size: 40px;
+li {
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: left;
 }
 
-p {
-  font-size: 28px;
+h1 { 
+  text-align: center; 
+  font-size: 3rem;
+}
+
+.btn-list {
+  flex: 1;
 }
 
 button {
-  font-family: 'Gayathri', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   align-items: center;
   border: none;
-  padding-top: 7px;
-  border-radius: 5px;
-  width:80px;
-  height: 30px;
+  padding: 0.5rem;
+  width:6rem;
+  height: 2.2rem;
+  font-size: 1rem;
 }
 
-#addBtn {
-  width: 50px;
-}
 
 button:hover {
-   background-color: pink;
-}
-
-#user-input {
-   width: 200px;
-   height: 20px;
+   background-color: rgb(240, 207, 58) ;
+   box-shadow:0 0 0 3px rgba(240, 207, 58, 0.2);
 }
 
