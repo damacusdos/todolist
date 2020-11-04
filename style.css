@@ -1,10 +1,12 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  background-size: cover;
 }
 
 .background-image {
-  background: url('bkimg.jpg') no-repeat;
-  background-size: 100%;
+  background: url('bkimg.jpg');
+  background-size: cover;
   filter: blur(2px);
   width: 100vw;
   height: 100vh;
@@ -13,6 +15,15 @@ body {
   z-index: -1;
   position:fixed;
   box-sizing: border-box;
+}
+
+header {
+  background-color: rgba(0,0,0, 0.2);
+  width: 450px;
+  margin: auto;
+  box-sizing: content-box;
+  padding: 0 3%;
+  box-shadow: 0 0 0 10px rgba(0,0,0, 0.1);
 }
 
 .add-tasks {
