@@ -21,7 +21,6 @@ header {
   background-color: rgba(256,256,256, 0.3);
   width: 450px;
   margin: 4rem auto auto auto;
-  box-sizing: content-box;
   padding: 0 3%;
   box-shadow: 0 0 0 10px rgba(0,0,0, 0.1);
 }
@@ -132,4 +131,29 @@ button:hover {
   color: white;
   font-size: 0.8rem;
   text-align: center;
+}
+
+@media (max-width:428px) {
+  header {
+    width: 350px;
+    margin: auto;
+  }
+  .lists {
+    min-width: 350px;     
+  }
+  .input2 {
+    width: 18%;
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    width: 275px;
+  }
+  .lists {
+    min-width: 275px;
+  }
+  .input2 {
+    width: 17%;
+  }
 }
