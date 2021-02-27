@@ -1,7 +1,7 @@
 const selectAllBtn = document.getElementById('selectAllBtn');
 const deleteBtn = document.getElementById('deleteBtn');
 
-const addTasks = document.querySelector('.add-tasks');
+const addTaskForm = document.querySelector('.addTaskForm');
 const taskList = document.querySelector('#task-list');
 let list = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -18,7 +18,8 @@ function addTask(e) {
   list.push(item);
   displayItem(list, taskList);
   localStorage.setItem('items', JSON.stringify(list));
-  this.reset();
+
+  this.reset()
 }
 
 function displayItem(tasks = [], tasksList) {
@@ -67,7 +68,7 @@ function selectAllHandler() {
   }
 
 
-addTasks.addEventListener('submit', addTask);
+addTaskForm.addEventListener('submit', addTask);
 taskList.addEventListener('click', toggleHandler);
 
 deleteBtn.addEventListener('click', deleteHandler);

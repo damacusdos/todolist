@@ -3,36 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="A Minimalistic and Simple To-do List">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Gayathri&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>To-do List</title>
 </head>
+
 <body>
-  <div class="background-image"></div>
+<div class="bg"></div>
+<div class="container mt-5 p-3">
   <header>
     <h1>Your Tasks</h1>
   </header>
   <main class="lists">
-  <form class="add-tasks">
-      <input type="text" class="add-tasks__input input1" name="item" placeholder="Type your task">
-      <input type="submit" class="add-tasks__input input2" value="Add">
-  </form>
-  <div class="to-do">
-    <h2>To-dos</h2>
-    <ul id="task-list">
-      <li>🙌 Your list is empty!</li>
-    </ul>
+    <div class="card px-3 py-3 my-3">
+      <form class="input-group addTaskForm">
+        <input type="text" class="form-control" name="item" placeholder="Type your task">
+        <input type="submit" class="btn btn-outline-secondary addTaskButton" value="+">
+      </form>
+    </div>
+    <div class="card px-3 py-3">
+      <div class="to-do mb-3">
+        <h2 class="mb-3">To-dos</h2>
+        <ul id="task-list">
+          <li>🙌 Your list is empty!</li>
+        </ul>
+      </div>
+      <div class="btn-list">
+        <button type="button" id="selectAllBtn" class="btn btn-outline-secondary buttons">Select All</button>
+        <button type="button" id="deleteBtn" class="btn btn-outline-secondary buttons">Delete</button>
+      </div>
   </div>
-  <div class="btn-list">
-    <button id="selectAllBtn">Select All</button>
-    <button id="deleteBtn">Delete</button>
-  </div>
+  </main>
+  <footer class="main-footer mt-3"><p>Created by Alison Huang</p></footer>
+</div>
 
-</main>
 
-  <footer class="main-footer"><p>Created by Alison Huang</p></footer>
-  <script src="app.js"></script>
+<script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>
